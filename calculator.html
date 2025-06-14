@@ -48,14 +48,17 @@
            color: black;
            font-weight: bold;
         }
+        @media (max-width: 768px) {
+            
+        }
     </style>
 </head>
 <body>
     <div class="calcu">
-        <h2>BMI Calculator</h2>
-        <input type="number" id="weight" placeholder="Enter your Number">
-        <input type="number" id="hight" placeholder="Enter your Number">
-        <button>Submit</button>
+        <h2>Odd/Even Number <br> Calculator</h2>
+        <input type="number" id="Number1" placeholder="Enter your Number">
+        <input type="number" id="Number2" placeholder="Enter your Number">
+        <button onclick="calculator()">Submit</button>
         <h3>Your Info</h3>
         <div id="result" style="margin-top: 18px">
 
@@ -64,7 +67,18 @@
 
     <script>
         function calculator() {
-            
+          const item1 = Number(document.getElementById("Number1").value);
+          const item2 = Number(document.getElementById("Number2").value);
+          
+          total = item1 + item2
+
+          let status = ""
+          if (total % 2 == 0) {
+            status = "Even"}
+            else status = "Odd"
+
+            document.getElementById("result").innerHTML = 
+        `<p>Your Number is : <strong> ${total} </strong> and its an <strong>${status}</strong> Number</p>`;
         }
     </script>
     
